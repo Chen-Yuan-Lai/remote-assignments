@@ -1,15 +1,9 @@
 function countAandB(input) {
-  const num = [0, 0];
+  let num = 0;
   input.forEach((element) => {
-    if (element === "a") {
-      num[0]++;
-    } else if (element === "b") {
-      num[1]++;
-    }
+    if (element === "a" || element === "b") num++;
   });
-  return `${num[0]} 'a' letter${num[0] > 1 ? "" : "s"} and ${
-    num[1]
-  } 'b' letter${num[1] > 1 ? "" : "s"}`;
+  return num;
 }
 
 function toNumber(input) {
