@@ -184,6 +184,41 @@ input:checked ~ label:hover {
   background: #dee0e3;
 }
 
-.featured product {
-  padding: 40px 0;
+.featured-product {
+  padding: 40px 16px 0;
+}
+
+.landing-row {
+  gap: 2em;
+}
+
+.landing-card {
+  height: 256px;
+  padding: 8px 32px 25px;
+  border: 1px solid #b3b4b6;
+  border-radius: 5px;
+}
+
+.landing-logo {
+  width: 30%;
+  margin-bottom: 16px;
+}
+
+.landing-description {
+  margin-top: 16px;
+}
+
+.secondary-banner {
+  margin-top: 100px;
+  padding: 0 24px 0;
+}
+
+.secondary-banner-row {
+  border-radius: 5px;
+  border: 0.667px solid #5f6368;
+  padding: 40px 32px;
+}
+
+.secondary-banner-col {
+  width: 50%;
 }
