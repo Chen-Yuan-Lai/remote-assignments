@@ -1,0 +1,23 @@
+.main-header,
+.main-nav,
+.title,
+.main-section,
+.container,
+.row {
+  display: flex;
+}
+.main-header,
+.main-nav {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-section,
+.container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  flex: 1;
+}
