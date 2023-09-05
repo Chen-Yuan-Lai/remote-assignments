@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/remote-assignments/react-app/static/css/main.0a6a803e.css",
+    "main.js": "/remote-assignments/react-app/static/js/main.49f2f936.js",
+    "static/js/787.b701888c.chunk.js": "/remote-assignments/react-app/static/js/787.b701888c.chunk.js",
+    "index.html": "/remote-assignments/react-app/index.html",
+    "static/media/logo.svg": "/remote-assignments/react-app/static/media/logo.c65042976c9717af55f9cd4050f68eb2.svg",
+    "main.0a6a803e.css.map": "/remote-assignments/react-app/static/css/main.0a6a803e.css.map",
+    "main.49f2f936.js.map": "/remote-assignments/react-app/static/js/main.49f2f936.js.map",
+    "787.b701888c.chunk.js.map": "/remote-assignments/react-app/static/js/787.b701888c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a6a803e.css",
+    "static/js/main.49f2f936.js"
+  ]
+}
