@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import { useState } from "react";
 import "./App.css";
 import "./flexbox.css";
@@ -70,7 +70,7 @@ export default function App() {
     <>
       <header className="main-header">
         <div class="title">
-          <img class="logo" src={logo} alt="logo" />
+          <img class="logo" src="logo.svg" alt="logo" />
           <h1 class="name">Website title</h1>
         </div>
         <ul class="main-nav">
