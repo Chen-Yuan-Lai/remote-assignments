@@ -1,11 +1,13 @@
-const express = require("express");
+const express = require('express');
+const sumRouter = require('./routes/sumRoute.js');
 
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hellow, My Server!");
-});
+// serve static files
+app.use(express.static('public'));
+
+app.use('/', sumRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
