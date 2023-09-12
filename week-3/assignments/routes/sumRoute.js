@@ -1,5 +1,5 @@
 const express = require('express');
-const sumController = require('../controllers/sumController.js');
+const sumController = require('../controllers/controller.js');
 
 const router = express.Router();
 
