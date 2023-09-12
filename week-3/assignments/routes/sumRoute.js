@@ -1,12 +1,12 @@
 const express = require('express');
-const sumController = require('../controllers/controller.js');
+const controller = require('../controllers/controller.js');
 
 const router = express.Router();
 
-router.route('/').get(sumController.main);
+router.route('/').get(controller.main);
 
-router.route('/data').get(sumController.getSum);
-router.route('/userName').get();
-router.route('/trackName').get();
+router.route('/data').get(controller.getSum);
+router.route('/myName').get(controller.getCookie);
+router.route('/trackName').get(controller.setCookie);
 
 module.exports = router;
