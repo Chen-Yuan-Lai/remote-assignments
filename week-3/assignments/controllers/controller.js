@@ -7,13 +7,17 @@ exports.main = function (req, res) {
 exports.getSum = function (req, res) {
   let num = req.query.number;
 
-  if (num === undefined) {
-    res.send(`Lack pf Parameter`);
-  } else if (isNaN(+num)) {
-    res.send(`Wrong Parameter`);
+  if (num === '') {
+    res.send('Lack of Parameter');
+    return;
   } else {
     num = +num;
-    res.send(`${(num * (num + 1)) / 2}`);
+
+    if (isNaN(num) || num < 0) {
+      res.send('Wrong Parameter');
+    } else {
+      res.send(`${(num * (num + 1)) / 2}`);
+    }
   }
 };
 
