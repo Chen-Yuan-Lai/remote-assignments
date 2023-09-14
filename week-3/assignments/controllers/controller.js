@@ -5,13 +5,14 @@ exports.main = function (req, res) {
 };
 
 exports.getSum = function (req, res) {
-  const num = +req.query.number;
+  let num = req.query.number;
 
-  if (isNaN(num)) {
+  if (num === undefined) {
+    res.send(`Lack pf Parameter`);
+  } else if (isNaN(+num)) {
     res.send(`Wrong Parameter`);
-  } else if (num === 0) {
-    res.send('0');
   } else {
+    num = +num;
     res.send(`${(num * (num + 1)) / 2}`);
   }
 };
