@@ -16,7 +16,8 @@ function ajax(url) {
 
 async function fet(url) {
   const response = await fetch(url);
-  const sum = await response.json();
+  const sum = await response.text();
+  console.log(sum);
 
   ans.textContent = `Ans: ${sum}`;
 }
