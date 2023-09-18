@@ -1,6 +1,7 @@
 {
   "name": "assignment-3",
   "version": "0.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "start": "nodemon app.js"
