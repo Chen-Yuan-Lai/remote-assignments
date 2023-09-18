@@ -1,5 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .sign
+    h1 Sign In
+    form#sign-in-form
+      label(for='sign-in-email') Enter your e-mail:
+      input#sign-in-email(type='text')
+
+      label(for='sign-in-password') Enter your password:
+      input#sign-in-password(type='text')
+
+    button(type='submit', form='sign-in-form', value='send') Send
+  .sign
+    h1 Sign Up
+    form#sign-up-form
+      label(for='integer') Enter your e-mail:
+      input.sign-up-email(type='text')
+
+      label(for='integer') Enter your password:
+      input.sign-up-password(type='text')
+
+    button(type='submit', form='sign-up-form', value='send') Send
