@@ -1,14 +1,15 @@
 import express from "express";
+import viewController from "../controllers/viewController.js";
 import mainController from "../controllers/mainController.js";
 
 const router = express.Router();
 
-/* GET home page. */
-router.get("/", mainController.homePage);
+// routes for rendering page
+router.get("/", viewController.homePage);
+router.get("/member", viewController.member);
 
-router.post("/sign-in", mainController.signIn);
-router.post("/sign-up", mainController.signUp);
-
-router.get("/member", mainController.member);
+// routes for manipulating database
+router.post("/createUser", mainController.createUser);
+router.post("/getOneUser", mainController.getOneUser);
 
 export default router;
