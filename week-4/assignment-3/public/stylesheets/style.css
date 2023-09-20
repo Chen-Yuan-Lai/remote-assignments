@@ -15,3 +15,8 @@ a {
   align-items: center;
   justify-content: space-around;
 }
+
+.message {
+  display: none;
+  background-color: red;
+}
