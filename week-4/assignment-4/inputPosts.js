@@ -37,7 +37,6 @@ async function insertPosts() {
   await Promise.all(insertPostsPromise);
   pool.end();
   console.log("Complete");
-  return;
 }
 
 insertPosts();
