@@ -1,34 +1,27 @@
-import mysql from "mysql2";
 import dotenv from "dotenv";
 import { AppError } from "../util/appError.js";
+import userMoodel from "../models/userModel.js";
 
 dotenv.config();
 
-// connection database
-const pool = mysql
-  .createPool({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE,
-  })
-  .promise();
+//
+// function catchAsync(callback) {
+//   return (req, res, next) => {
+//     callback(req, res, next).catch(next);
+//   };
+// }
 
-async function getOneUser(req, res, next) {
+async function signIn(req, res, next) {
   try {
-    const { email } = req.body;
+    const data = req.body;
 
-    const [row] = await pool.query(
-      `
-      SELECT * 
-      FROM user 
-      WHERE email= ?
-      `,
-      [email]
-    );
+    const row = await userMoodel.getOneUser(data);
+    console.log(row);
 
     if (!row.length) {
-      return next(new AppError("No user found with that email", 404));
+      return next(
+        new AppError("email or password is wrong, please enter again!", 404)
+      );
     }
 
     res.status(201).json({
@@ -40,26 +33,22 @@ async function getOneUser(req, res, next) {
   }
 }
 
-async function createUser(req, res, next) {
+async function signUp(req, res, next) {
   try {
     const data = req.body;
 
-    await pool.query(
-      `
-    INSERT INTO user (email, password)
-    VALUES (?, ?)
-    `,
-      [data.email, data.password]
-    );
+    await userMoodel.createUser(data);
 
     res.status(201).json({
       status: "success",
       data: data,
     });
   } catch (error) {
-    console.error(error.message);
+    if (error.errno === 1062) {
+      return next(new AppError("Duplicate email! Please sign-up again", 400));
+    }
     next(error);
   }
 }
 
-export default { getOneUser, createUser };
+export default { signIn, signUp };
