@@ -12,7 +12,6 @@ export async function fetchData(url, data) {
     const response = await fetch(url, requestOptions);
 
     if (!response.ok && !`${response.status}`.startsWith("4")) {
-      console.error(response.status);
       throw new Error("Network response was not ok");
     }
     return await response.json();
