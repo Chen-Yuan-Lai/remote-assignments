@@ -26,9 +26,9 @@ async function callback(e) {
 
   let res;
   if (this.id === "sign-up-form") {
-    res = await fetchData(`${url}createUser`, data);
+    res = await fetchData(`${url}signUp`, data);
   } else {
-    res = await fetchData(`${url}getOneUser`, data);
+    res = await fetchData(`${url}signIn`, data);
   }
   showMessage(messageElement, res.status, res.data, url);
 }

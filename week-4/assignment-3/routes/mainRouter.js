@@ -9,7 +9,7 @@ router.get("/", viewController.homePage);
 router.get("/member", viewController.member);
 
 // routes for manipulating database
-router.post("/createUser", mainController.createUser);
-router.post("/getOneUser", mainController.getOneUser);
+router.post("/signIn", mainController.signIn);
+router.post("/signUp", mainController.signUp);
 
 export default router;
